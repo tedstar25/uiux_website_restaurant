@@ -37,8 +37,17 @@
     z-index: 3;
   }
 
-  .app__modal-content img {
-    max-width: 100%;
-    height: auto;
+
+
+  @media screen and (max-width:900px) {
+
+    .app__modal-content{
+
+        height: 85dvh;
+        top: 12%;
+
+      }
+
+
   }
   

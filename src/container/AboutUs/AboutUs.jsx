@@ -45,26 +45,32 @@ const AboutUs = () => {
         <Modal modal={showInfo1} onClose={closeInfo1}>
           <h2 className='headtext__cormorant'>Our Team</h2>
           <div className="modal__ourteam" >
-            <div>
-              <img className="modal__image" src={images.chef} alt="chef"/>
-              <p>This is John</p>
+            <div className='modal_ourteam-content'>
+              <div >
+                <img className="modal__image" src={images.chef} alt="chef"/>
+                <p>This is John</p>
+              </div>
+              <div>
+                <img className="modal__image" src={images.chef} alt="chef"/>
+                <p>This is Dave</p>
+              </div>
+              <div>
+                <img className="modal__image" src={images.chef} alt="chef"/>
+                <p>This is Pete</p>
+              </div>
             </div>
-            <div>
-              <img className="modal__image" src={images.chef} alt="chef"/>
-              <p>This is Dave</p>
+
+            <div className='modal_ourteam-content'>
+              <div>
+                <img className="modal__image" src={images.chef} alt="chef"/>
+                <p>This is Steve</p>
+              </div>
+              <div>
+                <img className="modal__image" src={images.chef} alt="chef"/>
+                <p>This is Maria</p>
+              </div>
             </div>
-            <div>
-              <img className="modal__image" src={images.chef} alt="chef"/>
-              <p>This is Pete</p>
-            </div>
-            <div>
-              <img className="modal__image" src={images.chef} alt="chef"/>
-              <p>This is Steve</p>
-            </div>
-            <div>
-              <img className="modal__image" src={images.chef} alt="chef"/>
-              <p>This is Maria</p>
-            </div>
+
           </div>
           
         </Modal>
