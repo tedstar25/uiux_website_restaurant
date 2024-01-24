@@ -13,17 +13,18 @@
   }
   
   .app__modal-content{
-    position: absolute;
-    background: white;
+    position: fixed;
+    background: var(--color-black);
     padding: 20px;
-    border-radius: 4rem;
-    max-width: 80%;
     width: 80dvw;
     height: 70dvh;
     text-align: center;
     z-index: 3;
-    top: 40%;
+    top: 20%;
     left: 10%;
+
+    border: 2px solid var(--color-golden);
+    border-radius: 4rem;
   }
   
   .app__modal-closeButton {
@@ -34,5 +35,10 @@
     border-radius: 4px;
     cursor: pointer;
     z-index: 3;
+  }
+
+  .app__modal-content img {
+    max-width: 100%;
+    height: auto;
   }
   

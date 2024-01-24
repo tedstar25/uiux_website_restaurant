@@ -7,17 +7,26 @@ import Modal from '../../components/Modal/Modal';
 
 const AboutUs = () => {
 
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo1, setShowInfo1] = useState(false);
+  const [showInfo2, setShowInfo2] = useState(false);
 
-  const openInfo = () => {
-    setShowInfo(true);
+  const openInfo1 = () => {
+    setShowInfo1(true);
   };
 
-  const closeInfo = () => {
-    setShowInfo(false);
+  const closeInfo1 = () => {
+    setShowInfo1(false);
   };
 
-  console.log(showInfo)
+  const openInfo2 = () => {
+    setShowInfo2(true);
+  };
+
+  const closeInfo2 = () => {
+    setShowInfo2(false);
+  };
+
+
 
   return (
 
@@ -33,11 +42,33 @@ const AboutUs = () => {
         <h1 className='headtext__cormorant'>About Us</h1>
         <img src={images.spoon} alt="about_spoon" className='spoon__img' />
         <p className='p__opensans' >er glaub- und vertrauenswürdig wirken möchte, muss ehrlich sein. Machen Sie nur wahrheitsgemässe Aussagen. Es ist nicht nötig über eine Million abgeschlossener Aufträge und 24-Stunden-Lieferung zu prahlen, wenn dies nicht stimmt. Lügen Sie Ihren Kunden nicht an. Schreiben Sie Ihren Inhalt wahrheitsgetreu.</p>
-        <Modal modal={showInfo} onClose={closeInfo}>
-          <h2>Modal Content</h2>
-          <p>This is a responsive modal window.</p>
+        <Modal modal={showInfo1} onClose={closeInfo1}>
+          <h2 className='headtext__cormorant'>Our Team</h2>
+          <div className="modal__ourteam" >
+            <div>
+              <img className="modal__image" src={images.chef} alt="chef"/>
+              <p>This is John</p>
+            </div>
+            <div>
+              <img className="modal__image" src={images.chef} alt="chef"/>
+              <p>This is Dave</p>
+            </div>
+            <div>
+              <img className="modal__image" src={images.chef} alt="chef"/>
+              <p>This is Pete</p>
+            </div>
+            <div>
+              <img className="modal__image" src={images.chef} alt="chef"/>
+              <p>This is Steve</p>
+            </div>
+            <div>
+              <img className="modal__image" src={images.chef} alt="chef"/>
+              <p>This is Maria</p>
+            </div>
+          </div>
+          
         </Modal>
-        <button type="button" className='custom__button' onClick={openInfo} >Modal1</button>
+        <button type="button" className='custom__button' onClick={openInfo1} >Our Team</button>
       </div>
       <div className='app__aboutus-content_knife flex__center'>
         <img src={images.knife} alt="about_knife" />
@@ -46,9 +77,11 @@ const AboutUs = () => {
         <h1 className='headtext__cormorant'>Out history</h1>
         <img src={images.spoon} alt="about_spoon" className='spoon__img' />
         <p className='p__opensans' >er glaub- und vertrauenswürdig wirken möchte, muss ehrlich sein. Machen Sie nur wahrheitsgemässe Aussagen. Es ist nicht nötig über eine Million abgeschlossener Aufträge und 24-Stunden-Lieferung zu prahlen, wenn dies nicht stimmt. Lügen Sie Ihren Kunden nicht an. Schreiben Sie Ihren Inhalt wahrheitsgetreu.</p>
-
-        
-        <button type="button" className='custom__button' >Know more</button>
+        <Modal modal={showInfo2} onClose={closeInfo2}>
+          <h2>Modal Content2</h2>
+          <p>This is a responsive modal window.</p>
+        </Modal>
+        <button type="button" className='custom__button' onClick={openInfo2}>Know more</button>
       </div>
     </div>
 
