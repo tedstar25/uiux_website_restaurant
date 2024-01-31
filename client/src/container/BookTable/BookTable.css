@@ -1,0 +1,16 @@
+
+
+.modal__error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.modal__error-content {
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
