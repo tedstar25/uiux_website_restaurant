@@ -43,7 +43,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-
     text-align: left;
 }
 
@@ -55,27 +54,59 @@
 
 
 .modal__ourteam {
-    height: 80%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    overflow-y: auto;
+  }
+
+@media (min-width: 1024px) {
+    .modal__ourteam {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .modal__ourhistory p{
+        font-size: x-large;
+        line-height: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal__ourteam {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 640px) {
+    .modal__ourteam {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.modal__ourteam-content{
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-  }
-
-.modal__ourteam > div:nth-child(1) {
-flex: 3; /* First div takes up 3/5 of the available space */
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
-.modal__ourteam > div:nth-child(2) {
-flex: 2; /* Second div takes up 2/5 of the available space */
+.modal__ourteam-content p{
+    width: 80%;
 }
 
-.modal_ourteam-content {
+.modal__ourhistory {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-direction: row;
-  }
-  
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 90%;
+    width: 80%;
+    margin: 0 auto;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
 
 
 .modal__image {
@@ -97,6 +128,8 @@ flex: 2; /* Second div takes up 2/5 of the available space */
     }
 }
 
+
+
 @media screen and (max-width:900px) {
     .app__aboutus-content{
         flex-direction: column;
@@ -106,17 +139,6 @@ flex: 2; /* Second div takes up 2/5 of the available space */
         margin: 4rem 0;
     }
 
-    .modal_ourteam-content {
-
-        flex-direction: column;
-      }
-    .modal__ourteam > div:nth-child(1) {
-    flex: 1;
-    }
-    
-    .modal__ourteam > div:nth-child(2) {
-    flex: 1; 
-    }
 
     .modal__image {
         width: 120px;
@@ -130,4 +152,12 @@ flex: 2; /* Second div takes up 2/5 of the available space */
         width: 80%;
         height: 320px;
     }
+
+    .modal__image {
+        width: 90px;
+        height: 110px;
+        margin-left: 1rem;
+      }
+
+
 }

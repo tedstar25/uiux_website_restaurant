@@ -4,6 +4,7 @@ import React from 'react';
 import {images,data} from '../../constants';
 import './SpecialMenu.css';
 import { SubHeading,MenuItem } from '../../components';
+import { Link } from 'react-router-dom';
 
 const SpecialMenu = () => (
   <div className='app__specialMenu flex__center section__padding' id='menu'>
@@ -38,7 +39,11 @@ const SpecialMenu = () => (
     </div>
 
     <div style={{marginTop:'15px'}}>
-            <button type='button' className='custom__button' >View More</button>
+      <Link to="/fullmenu">        
+        <button type="button" className="custom__button">
+          View More
+        </button>
+      </Link>
     </div>
   </div>
 );

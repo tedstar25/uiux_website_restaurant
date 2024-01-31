@@ -8,6 +8,8 @@ import gallery04 from '../assets/gallery04.png';
 import knife from '../assets/knife.png';
 import logo from '../assets/logo.png';
 import menu from '../assets/menu.png';
+import menu2 from '../assets/FiletMignon.jpg';
+import menu3 from '../assets/StuffedMushroom.jpg';
 import overlaybg from '../assets/overlaybg.png';
 import spoon from '../assets/spoon.svg';
 import welcome from '../assets/welcome.png';
@@ -21,6 +23,7 @@ import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
 
+
 export default {
   bg,
   chef,
@@ -32,6 +35,8 @@ export default {
   knife,
   logo,
   menu,
+  menu2,
+  menu3,
   overlaybg,
   spoon,
   welcome,

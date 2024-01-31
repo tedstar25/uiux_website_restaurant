@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {MdOutlineRestaurantMenu} from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 import images from '../../constants/images';
 import './Navbar.css';
@@ -29,7 +30,7 @@ const Navbar = () => {
     <div className='app__navbar-login' >
       <a href="#login" className='p__opensans'  > Log In / Register </a>
       <div/>
-      <a href='/' className='p__opensans' >Book Table</a>  {/* href= "/"  -> home */}
+      <li className='p__opensans list-style-none'><Link to="/booktable">Book table</Link></li>
     </div>
     <div className='app__navbar-smallscreen'>
       <GiHamburgerMenu color="#fff" fontSize={27} onClick={()=>setToggleMenu(true)} />

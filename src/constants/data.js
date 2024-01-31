@@ -56,6 +56,156 @@ const cocktails = [
   },
 ];
 
+const appetizers = [
+  {
+    title: 'Bruschetta al Pomodoro',
+    price: '$9.99',
+    tags: 'Italian | Fresh | Vegetarian',
+  },
+  {
+    title: "Stuffed Mushrooms",
+    price: '$11.99',
+    tags: 'Savory | Cheese | Vegetarian',
+  },
+  {
+    title: 'Spinach Artichoke Dip',
+    price: '$8.99',
+    tags: 'Creamy | Dip | Vegetarian',
+  },
+  {
+    title: 'Shrimp Cocktail',
+    price: '$13.99',
+    tags: 'Seafood | Tangy | Refreshing',
+  },
+  {
+    title: 'Chicken Wings (Buffalo Style)',
+    price: '$10.99',
+    tags: 'Spicy | Crispy | Finger Food',
+  },
+];
+
+const salads = [
+  {
+    title: 'Caesar Salad',
+    price: '$8.99',
+    tags: 'Classic | Crispy | Parmesan',
+  },
+  {
+    title: "Greek Salad",
+    price: '$9.99',
+    tags: 'Feta | Olives | Fresh Vegetables',
+  },
+  {
+    title: 'Caprese Salad',
+    price: '$10.99',
+    tags: 'Tomato | Mozzarella | Basil',
+  },
+  {
+    title: 'Cobb Salad',
+    price: '$11.99',
+    tags: 'Bacon | Avocado | Blue Cheese',
+  },
+  {
+    title: 'Mango Avocado Salad',
+    price: '$12.99',
+    tags: 'Tropical | Citrusy | Healthy',
+  },
+];
+
+const meat = [
+  {
+    title: 'Filet Mignon',
+    price: '$25.99',
+    tags: 'Prime Cut | Juicy | Grilled',
+  },
+  {
+    title: "BBQ Ribs",
+    price: '$18.99',
+    tags: 'Smoky | Tender | BBQ Sauc',
+  },
+  {
+    title: 'Lamb Chops',
+    price: '$22.99',
+    tags: 'Rosemary | Garlic | Char-Grilled',
+  },
+  {
+    title: 'Chicken Alfredo',
+    price: '$16.99',
+    tags: 'Creamy | Pasta | Italian',
+  },
+  {
+    title: 'Steak Fajitas',
+    price: '$20.99',
+    tags: 'Sizzling | Peppers | Onions',
+  },
+];
+
+const vegan = [
+  {
+    title: 'Quinoa Buddha Bowl',
+    price: '$14.99',
+    tags: 'Nutrient-Rich | Colorful | Vegan',
+  },
+  {
+    title: "Vegan Pad Thai",
+    price: '$13.99',
+    tags: 'Noodles | Peanuts | Tofu',
+  },
+  {
+    title: 'Chickpea Curry',
+    price: '$12.99',
+    tags: 'Spicy | Coconut Milk | Plant-Based',
+  },
+  {
+    title: 'Mushroom Risotto (Vegan)',
+    price: '$15.99',
+    tags: 'Creamy | Arborio Rice | Umami',
+  },
+  {
+    title: 'Vegetable Stir-Fry',
+    price: '$11.99',
+    tags: 'Crisp Vegetables | Soy Sauce | Vegan',
+  },
+];
+
+const desserts = [
+  {
+    title: 'Chocolate Lava Cake',
+    price: '$7.99',
+    tags: 'Decadent | Melting Cente | Sweet',
+  },
+  {
+    title: "Tiramisu",
+    price: '$9.99',
+    tags: 'Coffee-Flavored | Ladyfingers | Mascarpone',
+  },
+  {
+    title: 'Cheesecake (New York Style)',
+    price: '$8.99',
+    tags: 'Creamy | Graham Cracker Crust | Rich',
+  },
+  {
+    title: 'Fruit Sorbet',
+    price: '$6.99',
+    tags: 'Refreshing | Light | Assorted Fruits',
+  },
+  {
+    title: 'Classic Apple Pie',
+    price: '$10.99',
+    tags: 'Cinnamon | Flaky Crust | Warm',
+  },
+];
+
+
+
+
+
+
+
+
+
+
+
 const awards = [
   {
     imgUrl: images.award02,
@@ -79,4 +229,4 @@ const awards = [
   },
 ];
 
-export default { wines, cocktails, awards };
+export default { wines, cocktails, awards, appetizers, salads, meat, vegan, desserts };

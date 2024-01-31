@@ -95,6 +95,10 @@
   font-size: 16px;
 }
 
+.list-style-none {
+  list-style: none;
+}
+
 .headtext__cormorant {
   font-family: var(--font-base);
   color: var(--color-golden);

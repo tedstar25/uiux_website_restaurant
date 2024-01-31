@@ -1,26 +1,28 @@
 import React from 'react';
 
-import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, SpecialMenu } from './container';
-import { Navbar } from './components';
+import { Booktable, Fullmenu, Home } from './pages';
+
 import './App.css';
+
+import { Routes ,Route} from 'react-router-dom';
 
 //https://www.youtube.com/watch?v=4oV65GVVits
 
-const App = () => (
-  <div>
-    <div className='app_navbar'>
-      <Navbar />
-    </div>
-    <Header />
-    <AboutUs />
-    <SpecialMenu />
-    <Chef />
-    <Intro />
-    <Laurels />
-    <Gallery />
-    <FindUs />
-    <Footer /> 
-  </div>
-);
+
+
+
+const Error404 = () => <h1>404 – Seite nicht gefunden</h1>;
+
+const App = () => {
+
+  return (
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/fullmenu" element={<Fullmenu/>} />
+      <Route path="/booktable" element={<Booktable/>} />
+      <Route path="*" element={<Error404 />} />
+    </Routes>
+  )
+};
 
 export default App;
