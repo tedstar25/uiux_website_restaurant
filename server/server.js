@@ -3,37 +3,6 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 const validateFormData = require('./logic')
-/* 
-const validateFormData = (name, time, date , phoneNumber, email) => {
-  const errors = [];
-
-  console.log("name")
-  console.log(name)
-
-  if (!name || name.trim() === '') {
-    errors.push('Name is required.');
-  }
-
-  const phoneRegex = /^\d{10}$/;
-  if (!phoneRegex.test(phoneNumber)) {
-    errors.push('Invalid phone number. Please enter a 10-digit phone number.');
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    errors.push('Invalid email address.');
-  }
-
-  if (!date || date.trim() === '') {
-      errors.push('Date is required.');
-  }
-
-  if (!time || time.trim() === '') {
-      errors.push('Time is required.');
-  }
-
-  return errors;
-}; */
 
 const app = express();
 const port = 3001;

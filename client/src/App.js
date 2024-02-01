@@ -2,7 +2,7 @@ import React, {lazy, Suspense} from 'react';
 
 import './App.css';
 import './styles.css'
-import {Loading} from './pages'
+import {Loading, Error404} from './pages'
 
 import { Routes ,Route} from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const Booktable = lazy(() => import('./pages/booktable.jsx'));
 
 
 
-const Error404 = () => <h1>404 – Seite nicht gefunden</h1>;
+
 
 const App = () => {
 
