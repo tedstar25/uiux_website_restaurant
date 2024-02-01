@@ -29,7 +29,11 @@ const Gallery = () => {
         <SubHeading title="Instagram" />
         <h1 className='headtext__cormorant'>Photo Gallery</h1>
         <p className='p__opensans' style={{color:'#AAA', marginTop: '2rem' }} >Did yourself carriage learning she man its replying. Sister piqued living her you enable mrs off spirit really. Parish oppose repair is me misery.  </p>
-        <button type="button" className='custom__button' >View More</button>
+        <button type="button" className='custom__button' >
+          <a href="https://www.instagram.com/_yannick_23/" target="_blank">
+            View More
+          </a>
+        </button>
       </div>
       <div className='app__gallery-images'>
         <div className='app__gallery-images_container' ref={scrollRef} >
