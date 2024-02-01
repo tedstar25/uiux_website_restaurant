@@ -51,7 +51,7 @@ const BookTable = () => {
       console.log(e)
   
       try {
-        const response = await fetch(`http://server:3001/send-email`, {
+        const response = await fetch(`http://localhost:3001/send-email`, {
 
           method: 'POST',
           headers: {

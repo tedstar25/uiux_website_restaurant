@@ -1,14 +1,14 @@
-FROM node:18-alpine
+FROM node:lts
 
 RUN npm install -g nodemon
 
 WORKDIR /app
 
-COPY package.json .
+COPY package*.json ./
 
-RUN npm install
+RUN npm install 
 
-COPY . .
+COPY . ./
 
 EXPOSE 3001
 
