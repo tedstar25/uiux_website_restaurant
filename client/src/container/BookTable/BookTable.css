@@ -14,3 +14,29 @@
     justify-content: center;
     width: 100%;
 }
+
+.returnbutton {
+    margin-top: 3rem;
+    width: 40%;
+    border-radius: 30px;
+    background-color: var(--color-golden);
+}
+
+
+
+
+.app__booktable-input {
+    font-size: 16px; /* Set the desired font size */
+    text-align: center;
+}
+
+.app__booktable-input::placeholder {
+    font-size: 2rem; /* Set the desired font size */
+}
+
+
+  @media screen and (max-width: 650px) {
+    .app__booktable-input::placeholder {
+        font-size: 1rem; /* Set the desired font size */
+      }
+}

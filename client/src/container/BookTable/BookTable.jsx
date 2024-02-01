@@ -110,20 +110,20 @@ const BookTable = () => {
           <h1 className="headtext__cormorant">Make a booking request!</h1>
           <p className="p__opensans">We'll get in touch with you soon as possible.</p>
           </div>
-          <div className='app__newsletter-input flex__center' style={{flexFlow:'column', gap:'1rem'}}>
-          <input type="name" name="name" placeholder='Enter your name' onChange={handleChange} className='text__center'/>
-          <input type="date" name="date" placeholder='Enter date '  onChange={handleChange} className='text__center'/>
-          <input type="time" name="time" placeholder='Enter time'  onChange={handleChange} className='text__center'/>
-          <input type="number" name="phoneNumber" placeholder='Enter your phone number (10 digits)' maxLength="10" pattern="\d{10}" onChange={handleChange} className='text__center'/>
-          <input type="email" name="email" placeholder='Enter your E-Mail' onChange={handleChange} className='text__center' />
+          <div className='app__newsletter-input flex__center' style={{flexFlow:'column', gap:'1rem', padding:'2rem'}}>
+            <input type="name" name="name" placeholder='Enter your name' onChange={handleChange} className=' app__booktable-input'/>
+            <input type="date" name="date" placeholder='Enter date '  onChange={handleChange} className='app__booktable-input'/>
+            <input type="time" name="time" placeholder='Enter time'  onChange={handleChange} className='app__booktable-input'/>
+            <input type="number" name="phoneNumber" placeholder='Enter your phone number' maxLength="10" pattern="\d{10}" onChange={handleChange} className='app__booktable-input' />
+            <input type="email" name="email" placeholder='Enter your E-Mail' onChange={handleChange} className='app__booktable-input' />
           </div>
           <div className='flex__center' style={{marginTop:'3rem'}}>
               <button className='custom__button flex__center' onClick={handleSubmit} >Subscribe</button>
           </div>
         </div>
-        <div className='flex__center' style={{marginTop:'3rem'}}>
+        <div className='flex__center custom__button returnbutton' >
           <Link to="/">        
-              <button type="button" className="custom__button">
+              <button type="button" className="custom__button" style={{backgroundColor:'#DCCA87'}}>
               Back
               </button>
           </Link>
