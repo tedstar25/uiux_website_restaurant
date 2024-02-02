@@ -9,6 +9,8 @@ services:
       - '3001:3001'
     networks:
       - caddy
+    env_file:
+      - ./server/.env 
 
     #volumes:
       # Bind-mounts configuration
