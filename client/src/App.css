@@ -8,10 +8,6 @@
   align-items: center;
 }
 
-.text__center {
-  text-align: center;
-}
-
 .app__bg {
   background: url('./assets/bg.png');
   background-position: center;

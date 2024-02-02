@@ -8,7 +8,20 @@ const app = express();
 const port = 3001;
 
 app.use(express.json());
-app.use(cors());
+
+//app.use(cors());
+
+const allowedOrigins = ['http://localhost:3000']; 
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+}));
 
 app.post('/send-email', (req, res) => {
   const { name, time, date, phoneNumber, email } = req.body;
