@@ -10,7 +10,7 @@ const gm_user = process.env.GM_USER;
 const gm_pw = process.env.GM_PW;
 const gm_target = process.env.GM_TARGET;
 //const cors_domain = process.env.CORS_DOMAIN;
-const cors_domain = 'https://restaurant.tedstar25.homes';
+const cors_domain = 'https://www.restaurant.tedstar25.homes';
 
 
 const app = express();
@@ -37,6 +37,8 @@ const options = {
   origin: [
       `${cors_domain}`,
       'https://test.tedstar25.homes',
+      'https://www.test.tedstar25.homes',
+      'https://restaurant.tedstar25.homes'
   ],
   preflightContinue: false,
 };
