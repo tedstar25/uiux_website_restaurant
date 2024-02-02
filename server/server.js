@@ -4,6 +4,15 @@ const cors = require('cors');
 
 const validateFormData = require('./logic')
 
+require('dotenv').config();
+
+const gm_user = process.env.GM_USER;
+const gm_pw = process.env.GM_PW;
+const gm_target = process.env.GM_TARGET;
+//const cors_domain = process.env.CORS_DOMAIN;
+const cors_domain = 'https://test.tedstar25.homes';
+
+
 const app = express();
 const port = 3001;
 
@@ -26,24 +35,20 @@ const options = {
   credentials: true,
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
   origin: [
-      'http://localhost:3001',
-      'http://localhost:3000',
+      `${cors_domain}`,
   ],
   preflightContinue: false,
 };
 
 const corsOpts = cors(options);
 
-app.use(corsOpts);
+app.use(corsOpts); 
 
 app.post('/send-email', (req, res) => {
   const { name, time, date, phoneNumber, email } = req.body;
 
 
   const validationErrors = validateFormData(name, date, time , phoneNumber, email);
-
-  console.log("errors")
-  console.log(validationErrors)
 
   if (validationErrors.length > 0) {
     return res.status(400).json({ errors: validationErrors });
@@ -53,20 +58,18 @@ app.post('/send-email', (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'quellbrunen@gmail.com',
-        pass: 'znvi cfxs krhd sgda',
+        user: `${gm_user}`,
+        pass: `${gm_pw}`,
       },
     });
 
-
     const mailOptions = {
-      from: 'quellbrunen@gmail.com',
-      to: 'yannick.gogolin@gmail.com',
+      from: `${gm_user}`,
+      to: `${gm_target}`,
       subject: 'Booking Request',
       text: `Name: ${name}\nDate: ${date}\n Time: ${time}\nPhone Number: ${phoneNumber}\nEmail: ${email}`,
     };
    
-
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error(error);
@@ -75,7 +78,9 @@ app.post('/send-email', (req, res) => {
 
       console.log('Email sent: ' + info.response);
       res.status(200).send('Email sent successfully');
-  });
+
+
+    });
 
   }
 
