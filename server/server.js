@@ -11,17 +11,30 @@ app.use(express.json());
 
 //app.use(cors());
 
-const allowedOrigins = ['http://localhost:3000']; 
+const options = {
+  allowedHeaders: [
+      'X-ACCESS_TOKEN',
+      'Access-Control-Allow-Origin',
+      'Authorization',
+      'Origin',
+      'x-requested-with',
+      'Content-Type',
+      'Content-Range',
+      'Content-Disposition',
+      'Content-Description',
+  ],
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  origin: [
+      'http://localhost:3001',
+      'http://localhost:3000',
+  ],
+  preflightContinue: false,
+};
 
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-}));
+const corsOpts = cors(options);
+
+app.use(corsOpts);
 
 app.post('/send-email', (req, res) => {
   const { name, time, date, phoneNumber, email } = req.body;
