@@ -21,9 +21,9 @@ const port = 3001;
 
 app.use(express.json());
 
-//app.use(cors());
+app.use(cors());
 
-const options = {
+/* const options = {
   allowedHeaders: [
       'X-ACCESS_TOKEN',
       'Access-Control-Allow-Origin',
@@ -50,7 +50,7 @@ const options = {
 
 const corsOpts = cors(options);
 
-app.use(corsOpts); 
+app.use(corsOpts);  */
 
 app.post('/send-email', (req, res) => {
   const { name, time, date, phoneNumber, email } = req.body;

@@ -8,35 +8,7 @@ import '../../App.css'
 import './BookTable.css'
 
 
-async function sendEmailRequest(formData, localhostURL) {
-  try {
-    const response = await fetch(`${localhostURL}/send-email`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
 
-    if (!response.ok) {
-      console.log("test");
-      try {
-        const errorData = await response.json();
-        setErrorMessages(errorData.errors);
-        openErrorModal();
-      } catch (error) {
-        console.error('Error parsing JSON:', error.message);
-      }
-    }
-
-    if (response.ok) {
-      console.log('Email sent successfully');
-      openSuccessModal();
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
 
 
 
@@ -46,6 +18,37 @@ const BookTable = () => {
   const [showError, setShowError] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [errorMessages, setErrorMessages] = useState(false);
+
+
+  async function sendEmailRequest(formData, localhostURL) {
+    try {
+      const response = await fetch(`${localhostURL}/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        console.log("test");
+        try {
+          const errorData = await response.json();
+          setErrorMessages(errorData.errors);
+          openErrorModal();
+        } catch (error) {
+          console.error('Error parsing JSON:', error.message);
+        }
+      }
+  
+      if (response.ok) {
+        console.log('Email sent successfully');
+        openSuccessModal();
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 
   const openErrorModal = () => {
     setShowError(true);
