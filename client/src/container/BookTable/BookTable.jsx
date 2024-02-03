@@ -8,6 +8,37 @@ import '../../App.css'
 import './BookTable.css'
 
 
+async function sendEmailRequest(formData, localhostURL) {
+  try {
+    const response = await fetch(`${localhostURL}/send-email`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+      console.log("test");
+      try {
+        const errorData = await response.json();
+        setErrorMessages(errorData.errors);
+        openErrorModal();
+      } catch (error) {
+        console.error('Error parsing JSON:', error.message);
+      }
+    }
+
+    if (response.ok) {
+      console.log('Email sent successfully');
+      openSuccessModal();
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+
 
 
 const BookTable = () => {
@@ -48,7 +79,15 @@ const BookTable = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
 
-      console.log(e)
+      const localhostURL1 = 'http://server:3001';
+      sendEmailRequest(formData, localhostURL1);
+
+      const localhostURL2 = 'http://172.18.0.5:3001';
+      sendEmailRequest(formData, localhostURL2);
+
+      const localhostURL3 = 'http://localhost:30012';
+      sendEmailRequest(formData, localhostURL3);
+
   
       try {
         const response = await fetch(`http://localhost:3001/send-email`, {
@@ -64,8 +103,6 @@ const BookTable = () => {
           console.log("test")
           try {
             const errorData = await response.json();
-            console.log(errorData)
-            console.log(errorData.errors)
 
             setErrorMessages(errorData.errors)
             openErrorModal();
@@ -82,6 +119,8 @@ const BookTable = () => {
       } catch (error) {
         console.error('Error:', error);
       }
+
+
     };
 
   
