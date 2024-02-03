@@ -28,8 +28,11 @@ services:
     networks:
       - caddy
     labels:
-      caddy: restaurant.tedstar25.homes
+      caddy: restaurant.tedstar25.homes www.restaurant.tedstar25.homes
       caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.header.Access-Control-Allow-Origin: https://restaurant.tedstar25.homes http://restaurant.tedstar25.homes https://test.tedstar25.homes http://test.tedstar25.homes http://localhost
+      caddy.header.Access-Control-Allow-Methods: POST, PUT
+
 
 
 networks:
