@@ -15,6 +15,11 @@ services:
     volumes:
       - ./server:/app
 
+    labels:
+      caddy.cors / :
+      caddy.cors.origin:      http://restaurant.tedstar25.homes     
+
+
     #volumes:
       # Bind-mounts configuration
       #- ./node:/app
