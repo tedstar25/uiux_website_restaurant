@@ -58,7 +58,6 @@ const Navbar = ({href}) => {
         </div>
         )}
       </div>
-
   </nav>
   
 )};

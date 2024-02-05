@@ -9,8 +9,11 @@ services:
       - '3001:3001'
     networks:
       - caddy
+      
     env_file:
-      - ./server/.env 
+      - ./server/.env
+    volumes:
+      - ./server:/app
 
     #volumes:
       # Bind-mounts configuration
@@ -27,11 +30,14 @@ services:
       - '3000:3000'
     networks:
       - caddy
+    volumes:
+      - ./client/src:/app/src
     labels:
       caddy: restaurant.tedstar25.homes www.restaurant.tedstar25.homes
       caddy.reverse_proxy: "{{upstreams 80}}"
-      caddy.header.Access-Control-Allow-Origin: https://restaurant.tedstar25.homes http://restaurant.tedstar25.homes https://test.tedstar25.homes http://test.tedstar25.homes http://localhost
-      caddy.header.Access-Control-Allow-Methods: POST, PUT
+
+
+
 
 
 

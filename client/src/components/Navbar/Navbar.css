@@ -23,7 +23,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     list-style: none;
 }
 
@@ -131,7 +130,8 @@
 
     .app__navbar-logo img {
         width: 110px;
-    }
-    
-
+    } 
 }
+
+
+
