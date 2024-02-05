@@ -16,8 +16,8 @@ services:
       - ./server:/app
 
     labels:
-      caddy.cors / :
-      caddy.cors.origin:      http://restaurant.tedstar25.homes     
+      caddy: restaurant.tedstar25.homes/server 
+      caddy.reverse_proxy: "{{upstreams 80}}"
 
 
     #volumes:
@@ -38,7 +38,7 @@ services:
     volumes:
       - ./client/src:/app/src
     labels:
-      caddy: restaurant.tedstar25.homes www.restaurant.tedstar25.homes
+      caddy: restaurant.tedstar25.homes 
       caddy.reverse_proxy: "{{upstreams 80}}"
 
 
