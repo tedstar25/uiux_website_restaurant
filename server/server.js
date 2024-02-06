@@ -17,7 +17,6 @@ const cors_domain5 = process.env.CORS_DOMAIN5;
 const cors_domain6 = process.env.CORS_DOMAIN6;
 
 const app = express();
-const port = 3001;
 
 app.use(express.json());
 
@@ -94,8 +93,6 @@ app.post('/send-email', (req, res) => {
 
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+
 
 

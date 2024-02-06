@@ -5,8 +5,7 @@ services:
       context: ./server
       dockerfile: Dockerfile
     container_name: server
-    ports:
-      - '3001:3001'
+
     networks:
       - caddy
       
@@ -31,8 +30,7 @@ services:
       context: ./client
       dockerfile: Dockerfile
     container_name: client
-    ports:
-      - '3000:3000'
+
     networks:
       - caddy
     volumes:

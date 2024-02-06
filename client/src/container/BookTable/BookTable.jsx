@@ -82,13 +82,13 @@ const BookTable = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
 
-      const localhostURL1 = 'http://server:3001';
+      const localhostURL1 = 'http://server';
       sendEmailRequest(formData, localhostURL1);
 
-      const localhostURL2 = 'http://172.18.0.5:3001';
+      const localhostURL2 = 'http://172.18.0.5';
       sendEmailRequest(formData, localhostURL2);
 
-      const localhostURL3 = 'http://localhost:30012';
+      const localhostURL3 = 'http://localhost';
       sendEmailRequest(formData, localhostURL3);
 
   
