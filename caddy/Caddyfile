@@ -1,0 +1,3 @@
+test.yannickgogolin.com {
+    reverse_proxy http://client:80
+}

@@ -1,20 +1,5 @@
-version: '3.7'
+version: '3.9'
 services:
-
-
-
-  caddy:
-    image: caddy
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-
-
   server:
     build: 
       context: ./server
@@ -39,13 +24,14 @@ services:
       - caddy
     volumes:
       - ./client/src:/app/src
+    labels:
+      caddy: test.tedstar25.homes 
+      caddy.reverse_proxy: "{{upstreams 80}}"
 
 
 
 
-volumes:
-  caddy_data:
-  caddy_config:
+
 
 networks:
   caddy:
