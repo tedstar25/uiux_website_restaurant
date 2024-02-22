@@ -1,52 +1,46 @@
 version: '3.7'
+
+x-compose-config:
+  project_name: restaurant
+
+
 services:
 
-
-
-  caddy:
-    image: caddy
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-
-
-  server:
+  backend:
     build: 
       context: ./server
       dockerfile: Dockerfile
-    container_name: server
+    container_name: backend
+
+    depends_on:
+      - backend
 
     networks:
-      - caddy
+      - restaurant
       
     env_file:
       - ./server/.env
     volumes:
       - ./server:/app
 
-  client:
+  frontend:
     build: 
       context: ./client
       dockerfile: Dockerfile
-    container_name: client
+    container_name: frontend
 
     networks:
-      - caddy
+      - restaurant
     volumes:
       - ./client/src:/app/src
 
 
 
-
-volumes:
-  caddy_data:
-  caddy_config:
-
 networks:
+
+  restaurant:
+    driver: bridge
+
+
   caddy:
     external: true
