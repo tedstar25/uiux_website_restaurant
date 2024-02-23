@@ -3,17 +3,14 @@ version: '3.7'
 x-compose-config:
   project_name: restaurant
 
-
 services:
-
   backend:
     build: 
       context: ./server
       dockerfile: Dockerfile
     container_name: backend
-
-    depends_on:
-      - backend
+    ports:
+      - '3001:3001'
 
     networks:
       - restaurant
@@ -28,19 +25,14 @@ services:
       context: ./client
       dockerfile: Dockerfile
     container_name: frontend
-
+    ports:
+      - '4000:3000'
     networks:
       - restaurant
     volumes:
       - ./client/src:/app/src
 
 
-
 networks:
-
   restaurant:
     driver: bridge
-
-
-  caddy:
-    external: true
