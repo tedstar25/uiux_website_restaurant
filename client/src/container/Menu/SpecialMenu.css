@@ -25,7 +25,7 @@
 }
 
 .app__specialMenu-menu_img{
-    width: 410px;
+    width: 300px;
     margin: 0 2rem;    
 }
 
@@ -78,4 +78,9 @@
         font-size: 35px;
         line-height: 48.5px;
     }
+}
+
+@media screen and (max-width: 410px){
+  
+
 }

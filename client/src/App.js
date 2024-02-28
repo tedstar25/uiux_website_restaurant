@@ -6,8 +6,6 @@ import {Loading, Error404} from './pages'
 
 import { Routes ,Route} from 'react-router-dom';
 
-import dotenv from 'dotenv';
-
 
 
 //https://www.youtube.com/watch?v=4oV65GVVits

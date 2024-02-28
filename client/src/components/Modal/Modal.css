@@ -37,6 +37,12 @@
     z-index: 3;
   }
 
+  .close_button {
+    font-size: 27px;
+    color: var(--color-golden);
+    cursor: pointer;
+  }
+
 
 
   @media screen and (max-width:900px) {
