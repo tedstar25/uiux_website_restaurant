@@ -55,7 +55,7 @@ const BookTable = () => {
       
   
       try {
-        const response = await fetch(`http://152.89.239.12:3001/send-email`, {
+        const response = await fetch(`https://152.89.239.12:3001/send-email`, {
 
           method: 'POST',
           headers: {
