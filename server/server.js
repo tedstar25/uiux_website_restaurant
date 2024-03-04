@@ -10,18 +10,9 @@ const gm_user = process.env.GM_USER;
 const gm_pw = process.env.GM_PW;
 const gm_target = process.env.GM_TARGET;
 const cors_domain1 = process.env.CORS_DOMAIN1;
-<<<<<<< HEAD
-
-=======
-//const cors_domain2 = process.env.CORS_DOMAIN2;
-//const cors_domain3 = process.env.CORS_DOMAIN3;
-//const cors_domain4 = process.env.CORS_DOMAIN4;
-//const cors_domain5 = process.env.CORS_DOMAIN5;
-//const cors_domain6 = process.env.CORS_DOMAIN6;
->>>>>>> refs/remotes/origin/dockertest
+const port = process.env.PORT_MAILSERVER
 
 const app = express();
-const port = 3001;
 
 app.use(express.json());
 
