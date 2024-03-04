@@ -1,16 +1,11 @@
 version: '3.7'
 
-x-compose-config:
-  project_name: restaurant
-
 services:
-  backend:
+  restaurant_be:
     build: 
       context: ./server
       dockerfile: Dockerfile
-    container_name: backend
-    ports:
-      - '3001:3001'
+    restart: always
 
     networks:
       - restaurant
@@ -20,15 +15,14 @@ services:
     volumes:
       - ./server:/app
 
-  frontend:
+  restaurant_fe:
     build: 
       context: ./client
-      dockerfile: Dockerfile
-    container_name: frontend
-    ports:
-      - '4005:3000'
+      dockerfile: Dockerfile.dev
+    restart: always
     networks:
       - restaurant
+      - reverse_proxy
     volumes:
       - ./client/src:/app/src
 
@@ -36,3 +30,6 @@ services:
 networks:
   restaurant:
     driver: bridge
+
+  reverse_proxy: 
+    external: true
