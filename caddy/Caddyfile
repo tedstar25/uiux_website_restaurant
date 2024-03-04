@@ -1,0 +1,3 @@
+test.tedstar25.homes {
+    reverse_proxy http://client:80
+}

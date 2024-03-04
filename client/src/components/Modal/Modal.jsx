@@ -1,7 +1,7 @@
 
 import './Modal.css'; // Adjust the path as needed
-import { useState } from 'react';
 
+import {MdOutlineRestaurantMenu} from 'react-icons/md';
 
 const Modal = ({ modal, onClose, children }) => {
 
@@ -11,13 +11,13 @@ const Modal = ({ modal, onClose, children }) => {
         <>
             <div className="app__modal-overlay"></div>
             <div className="app__modal-content"  >
-                <div style={{height:'90%'}}>
+
+                <div style={{height:'90%', overflow:'hidden'}}>
                     {children}
                 </div>
                 <div className='flex__center' style={{height:'10%'}} >
-                    <button className="custom__button" style={{marginBottom:'1rem'}} onClick={onClose}>
-                        Close
-                    </button>
+                
+                <MdOutlineRestaurantMenu fontSize={27} className='close_button' onClick={()=>onClose()} />
                 </div>
 
             </div>

@@ -3,6 +3,9 @@ import { Navbar } from '../components';
 
 const Home = () => {
 
+  const domain = process.env.REACT_APP_EXPRESS_DOMAIN;
+  console.log(domain)
+
   return (
     <div>
       <div className='app_navbar'>

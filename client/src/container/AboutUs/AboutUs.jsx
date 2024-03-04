@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import {images} from '../../constants';
 import './AboutUs.css';
 import Modal from '../../components/Modal/Modal';
+import {MdOutlineRestaurantMenu} from 'react-icons/md';
 
 const AboutUs = () => {
 
@@ -93,7 +94,7 @@ const AboutUs = () => {
         <p className='p__opensans' >Gericht has a rich and storied history that spans over 4 years. Founded in 2020, our journey began with a vision to create a culinary haven that would bring people together through the joy of exceptional food.</p>
     
         <Modal modal={showInfo2} onClose={closeInfo2}>
-          <h1 className='headtext__cormorant'>Out History</h1>
+          <h1 className='headtext__cormorant'>Our History</h1>
           <div className='modal__ourhistory'>
             <p className='p__opensans' >From our humble beginnings as a small eatery, we've evolved into a culinary destination known for its commitment to quality, innovation, and unwavering hospitality. Throughout the years, we've cherished the opportunity to serve our community, building lasting relationships with our patrons and becoming an integral part of the local dining scene.<br/> Our history is woven with milestones, from the introduction of signature dishes to the expansion of our space to accommodate the growing demand for our culinary creations.<br/><br/>  As we look back on our journey, we're grateful for the support of our loyal customers and the dedication of our passionate team. At Gericht, every chapter of our history reflects a commitment to excellence, a love for food, and a desire to create moments of joy around the dining table. Join us as we continue to write the next chapter of our story, and thank you for being part of our culinary legacy.</p>
           </div>

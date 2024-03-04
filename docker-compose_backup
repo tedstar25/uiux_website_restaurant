@@ -1,35 +1,38 @@
-version: '3.7'
-
+version: '3.9'
 services:
-  restaurant_be:
+  server:
     build: 
       context: ./server
       dockerfile: Dockerfile
-    restart: always
+    container_name: server
 
     networks:
-      - restaurant
+      - caddy
       
     env_file:
       - ./server/.env
     volumes:
       - ./server:/app
 
-  restaurant_fe:
+  client:
     build: 
       context: ./client
-      dockerfile: Dockerfile.dev
-    restart: always
+      dockerfile: Dockerfile
+    container_name: client
+
     networks:
-      - restaurant
-      - reverse_proxy
+      - caddy
     volumes:
       - ./client/src:/app/src
+    labels:
+      caddy: test.tedstar25.homes 
+      caddy.reverse_proxy: "{{upstreams 80}}"
+
+
+
+
 
 
 networks:
-  restaurant:
-    driver: bridge
-
-  reverse_proxy: 
+  caddy:
     external: true

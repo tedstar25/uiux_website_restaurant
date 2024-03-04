@@ -10,17 +10,13 @@ const gm_user = process.env.GM_USER;
 const gm_pw = process.env.GM_PW;
 const gm_target = process.env.GM_TARGET;
 const cors_domain1 = process.env.CORS_DOMAIN1;
-const cors_domain2 = process.env.CORS_DOMAIN2;
-const cors_domain3 = process.env.CORS_DOMAIN3;
-const cors_domain4 = process.env.CORS_DOMAIN4;
-const cors_domain5 = process.env.CORS_DOMAIN5;
-const cors_domain6 = process.env.CORS_DOMAIN6;
+const port = process.env.PORT_MAILSERVER
 
 const app = express();
-const port = 3001;
 
 app.use(express.json());
 
+app.use(cors());
 
 const options = {
   allowedHeaders: [
@@ -38,17 +34,13 @@ const options = {
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
   origin: [
       `${cors_domain1}`,
-      `${cors_domain2}`,
-      `${cors_domain3}`,
-      `${cors_domain4}`,
-      `${cors_domain5}`,
   ],
   preflightContinue: false,
 };
 
 const corsOpts = cors(options);
 
-app.use(corsOpts); 
+app.use(corsOpts);  
 
 app.post('/send-email', (req, res) => {
   const { name, time, date, phoneNumber, email } = req.body;
@@ -96,5 +88,7 @@ app.post('/send-email', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
 
 
