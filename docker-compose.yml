@@ -26,7 +26,7 @@ services:
       dockerfile: Dockerfile
     container_name: frontend
     ports:
-      - '4000:3000'
+      - '4005:3000'
     networks:
       - restaurant
     volumes:
