@@ -1,35 +1,33 @@
 version: '3.7'
 
+#project_name: restaurant
+
 services:
-  restaurant_be:
+  restaurant_mail:
     build: 
       context: ./server
       dockerfile: Dockerfile
     restart: always
-
+    container_name: restaurant_backend
     networks:
-      - restaurant
+      - reverse_proxy
       
     env_file:
       - ./server/.env
     volumes:
       - ./server:/app
 
-  restaurant_fe:
+  restaurant:
     build: 
       context: ./client
       dockerfile: Dockerfile.dev
+    container_name: restaurant
     restart: always
     networks:
-      - restaurant
       - reverse_proxy
     volumes:
       - ./client/src:/app/src
 
-
 networks:
-  restaurant:
-    driver: bridge
-
   reverse_proxy: 
     external: true
